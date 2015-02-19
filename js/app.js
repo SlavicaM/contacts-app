@@ -42,6 +42,7 @@ var App = (function(){
     showContacts: function(groupName) {
       var contactData = this.getGroup(groupName);
       var cl = new ContactList(contactData);
+      this.currentGroup = groupName;
       this.$main.html( cl.render() );
     },
 
@@ -65,11 +66,16 @@ var App = (function(){
         app.showContacts(groupName);
       });
 
-      this.$main.on("click", "a", function(e){
+      this.$main.on("click", ".contact-preview a", function(e){
         e.preventDefault();
         $clicked = $(e.currentTarget);
         var contactId = $clicked.data("contact-id");
         app.showFullContact(contactId);
+      });
+
+      this.$main.on("click", ".contact-full a", function(e){
+        e.preventDefault();
+        app.showContacts(app.currentGroup);
       });
     }
 
