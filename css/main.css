@@ -7,6 +7,9 @@
   background: red;
   float: left;
 }
+.sidebar .active {
+  color: white;
+}
 .main {
   width: calc(100% - 250px);
   background: green;

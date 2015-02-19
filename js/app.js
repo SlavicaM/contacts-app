@@ -26,8 +26,8 @@ var App = (function(){
 
     showGroups: function() {
       var groupData = this.getGroupNames();
-      var cgl = new ContactGroupList(groupData);
-      this.$sidebar.html( cgl.render() );
+      this.contactGroupList = new ContactGroupList(groupData);
+      this.$sidebar.html( this.contactGroupList.render() );
     },
 
     getGroup: function(groupName) {
@@ -43,6 +43,7 @@ var App = (function(){
       var contactData = this.getGroup(groupName);
       var cl = new ContactList(contactData);
       this.currentGroup = groupName;
+      this.contactGroupList.select(groupName);
       this.$main.html( cl.render() );
     },
 

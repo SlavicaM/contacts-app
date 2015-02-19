@@ -26,6 +26,13 @@ var ContactGroupList = (function(){
   }
 
   ContactGroupList.prototype = {
+    select: function(groupName) {
+      this.$el.find("li").removeClass("active");
+      this.$el
+        .find("li[data-group-name='"+ groupName +"']")
+        .addClass("active");
+    },
+
     render: function() {
       var $el = this.$el;
 
