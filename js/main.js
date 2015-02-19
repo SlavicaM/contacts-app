@@ -3,7 +3,7 @@ $(function(){
   $.ajax("contacts.json",{
 
     success: function(data) {
-      console.log(data);
+      window.app = new App(data);
     },
 
     error: function() {
