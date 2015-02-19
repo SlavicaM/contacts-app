@@ -40,3 +40,21 @@ var ContactList = (function() {
   return ContactList;
 
 })();
+
+var ContactFull = (function(){
+
+  var template = JST["contact-full"];
+
+  function ContactFull(data) {
+    this.data = data;
+  }
+
+  ContactFull.prototype = {
+    render: function() {
+      return $( template(this.data) );
+    }
+  }
+
+  return ContactFull;
+
+})();

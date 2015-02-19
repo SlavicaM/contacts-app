@@ -45,6 +45,16 @@ var App = (function(){
       this.$main.html( cl.render() );
     },
 
+    showFullContact: function(contactId) {
+      var contactData = _.find(this.data, function(contact) {
+        return contact.contact_id === contactId;
+      });
+
+      var contact = new ContactFull(contactData);
+
+      this.$main.html( contact.render() );
+    },
+
     addListeners: function() {
       var app = this;
 
@@ -53,7 +63,14 @@ var App = (function(){
         $clicked = $(e.currentTarget);
         var groupName = $clicked.data("group-name");
         app.showContacts(groupName);
-      })
+      });
+
+      this.$main.on("click", "a", function(e){
+        e.preventDefault();
+        $clicked = $(e.currentTarget);
+        var contactId = $clicked.data("contact-id");
+        app.showFullContact(contactId);
+      });
     }
 
   }
