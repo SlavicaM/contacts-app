@@ -8,7 +8,8 @@ var App = (function(){
     this.$main = $(".main");
 
     this.showGroups();
-    this.showContacts("work");
+    this.showContacts("all");
+    this.addListeners();
   }
 
   App.prototype = {
@@ -30,6 +31,9 @@ var App = (function(){
     },
 
     getGroup: function(groupName) {
+      if(groupName === "all") {
+        return this.data;
+      }
       return _.filter(this.data, function(contact){
         return contact.group === groupName;
       });
@@ -39,6 +43,17 @@ var App = (function(){
       var contactData = this.getGroup(groupName);
       var cl = new ContactList(contactData);
       this.$main.html( cl.render() );
+    },
+
+    addListeners: function() {
+      var app = this;
+
+      this.$sidebar.on("click", "li", function(e){
+        e.preventDefault();
+        $clicked = $(e.currentTarget);
+        var groupName = $clicked.data("group-name");
+        app.showContacts(groupName);
+      })
     }
 
   }

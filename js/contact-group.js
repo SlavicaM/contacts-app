@@ -29,6 +29,9 @@ var ContactGroupList = (function(){
     render: function() {
       var $el = this.$el;
 
+      var group = new ContactGroup({name: "all"});
+      $el.append( group.render() );
+
       _.each(this.data, function(groupData){
 
         var group = new ContactGroup(groupData);
