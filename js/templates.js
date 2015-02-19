@@ -1,7 +1,7 @@
 this["JST"] = this["JST"] || {};
 this["JST"]["contact-full"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<div class=\"contact-preview\">\n  <div class=\"photo\">\n    <img src=\""
+  return "<div class=\"contact-full\">\n  <a href=\"#\">Back to Group</a>\n  <div class=\"photo\">\n    <img src=\""
     + escapeExpression(((helper = (helper = helpers.photo || (depth0 != null ? depth0.photo : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"photo","hash":{},"data":data}) : helper)))
     + "\" alt=\""
     + escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"name","hash":{},"data":data}) : helper)))
@@ -25,7 +25,7 @@ this["JST"]["contact-group"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta
 this["JST"] = this["JST"] || {};
 this["JST"]["contact-preview"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<div class=\"contact-preview\">\n  <div class=\"photo\">\n    <img src=\""
+  return "<div class=\"contact-preview\">\n  <div class=\"photo\">\n    <img width=\"100\" src=\""
     + escapeExpression(((helper = (helper = helpers.photo || (depth0 != null ? depth0.photo : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"photo","hash":{},"data":data}) : helper)))
     + "\" alt=\""
     + escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"name","hash":{},"data":data}) : helper)))

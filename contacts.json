@@ -1,6 +1,7 @@
 [{
   "group": "family",
   "name": "John Doe",
+  "photo": "http://www.designboom.com/wp-content/uploads/2013/01/richard_turley_portrait.jpg",
   "contact_id": 1,
   "email": "john.doe@example.com",
   "phone": "555.123.4567"
@@ -28,4 +29,10 @@
   "contact_id": 5,
   "email": "cody.jones@example.com",
   "phone": "555.123.4571"
+},{
+  "group": "enemies",
+  "name": "Anti Cody",
+  "contact_id": 6,
+  "email": "anti.cody@example.com",
+  "phone": "555.123.4572"
 }]

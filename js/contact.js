@@ -9,7 +9,16 @@ var ContactPreview = (function(){
   ContactPreview.prototype = {
 
     render: function() {
-      return $( template(this.data) );
+      return $( template(this.renderData()) );
+    },
+
+    renderData: function() {
+      var defaultPhoto = "images/user-default.jpg";
+      var data = _.clone(this.data);
+      if (!data.photo) {
+        data.photo = defaultPhoto;
+      }
+      return data;
     }
 
   }
@@ -51,7 +60,16 @@ var ContactFull = (function(){
 
   ContactFull.prototype = {
     render: function() {
-      return $( template(this.data) );
+      return $( template(this.renderData()) );
+    },
+
+    renderData: function() {
+      var defaultPhoto = "images/user-default.jpg";
+      var data = _.clone(this.data);
+      if (!data.photo) {
+        data.photo = defaultPhoto;
+      }
+      return data;
     }
   }
 
